@@ -1,0 +1,11 @@
+<li [class.completed]="todo.completado" [class.editing]="editando">
+    <form [formGroup]="txtForm">
+      <div class="view">
+        <input class="toggle" type="checkbox" checked formControlName="completado">
+       <!-- <label>{{ todo.texto }}</label>-->
+       <label (click)="editar(todo.id)"> {{ todo.texto }} </label>
+        <button class="destroy" (click)="borrar(todo.id)"></button>
+      </div>
+      <input #fisico (blur)="terminarEdicion()" class="edit" formControlName="texto" value="Create a TodoMVC template">
+    </form>
+</li>
